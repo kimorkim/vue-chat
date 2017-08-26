@@ -23,7 +23,7 @@
 <script>
 
 import Vue from 'Vue';
-import { Component, Watch } from 'vue-property-decorator'
+import { Component, Watch } from 'vue-property-decorator';
 import firebase from 'firebase';
 import moment from 'moment';
 import ChatItem from './ChatItem';
@@ -51,7 +51,6 @@ class Chat extends Vue {
     }
 
     mounted() {
-        console.log('mounted');
         const chatListener = this.chatRef.limitToLast(100);
         chatListener.once('value', (snapshot) => {
             this.isShowAlertMessage = !snapshot.hasChildren();
@@ -85,12 +84,10 @@ class Chat extends Vue {
     }
 
     onMsgButtonClick() {
-        console.log('전송', moment().format('YYYY-MM-DD'));
-
         this.chatRef.push({
             author: 'tester',
             message: this.message,
-            date: moment().format('YYYY-MM-DD'),
+            date: new Date().getTime(),
         });
 
         this.message = '';
@@ -100,8 +97,6 @@ class Chat extends Vue {
         const { chatListDom } = this.$refs;
         if (chatListDom) {
             chatListDom.scrollTop = chatListDom.scrollHeight;
-            // a.scrollHeight - a.clientHeight === a.scrollTop
-            console.log(`scroll!! ${chatListDom.scrollTop} ${chatListDom.scrollHeight}`);
         }
     }
 }
