@@ -2,7 +2,7 @@
     <div class='Chat'>
         <div class='chatListArea'>
             <div class='chatList' ref='chatListDom' v-show='messageItem.length > 0'>
-                <chatItem v-for='item in messageItem' v-bind:key='item.key' :item='item' />
+                <chatItem v-for='(item, index) in messageItem' :key='item.key' :item='item' />
             </div>
             <div class='alertMessageArea' v-if='isShowAlertMessage'>
                 <div class='notFoundDataMessage'>
@@ -30,20 +30,21 @@ import ChatItem from './ChatItem';
 
 @Component({
     components: {
-        'chatItem': ChatItem
+        'chatItem': ChatItem,
     },
 })
 class Chat extends Vue {
-    constructor(props) {
-        super(props);
-        this.message = '';
-        this.isShowAlertMessage = false;
-        this.messageItem = [];
-    }
-
     @Watch('messageItem')
     onMessageItemChanged(val, oldVal) {
-        
+
+    }
+
+    data() {
+        return {
+            message: '',
+            messageItem: [],
+            isShowAlertMessage: false,
+        }
     }
 
     beforeMount() {
