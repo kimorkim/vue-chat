@@ -12,12 +12,7 @@ Vue.config.productionTip = false;
 Vue.component('icon', Icon);
 
 var firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyBehBUfqLgYRPqLkEHNz0y3_b2D58GXC-w",
-    authDomain: "vue-chat-4802e.firebaseapp.com",
     databaseURL: "https://vue-chat-4802e.firebaseio.com",
-    projectId: "vue-chat-4802e",
-    storageBucket: "vue-chat-4802e.appspot.com",
-    messagingSenderId: "603474117582",
 });
 var db = firebaseApp.database();
 
