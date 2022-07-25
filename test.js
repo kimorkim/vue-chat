@@ -6,25 +6,13 @@
 //fetch("https://entry2-dev.playentry.org/graphql",{headers:{"content-type":"application/json"},body:'{"query":"\\n    mutation UPDATE_USERINFO (\\n        $profileImage: String, \\n        $coverImage: String, \\n        $description: String,\\n        $nickname: String,\\n        $gender: String\\n        $mobileKey: String\\n    ) {\\n        updateUserInfo(\\n            profileImage: $profileImage, \\n            coverImage: $coverImage, \\n            description: $description\\n            nickname: $nickname\\n            gender: $gender\\n            mobileKey: $mobileKey\\n        ) {\\n            \\n    status\\n    result\\n\\n        }\\n    }\\n","variables":{"description":"임티닉네임 만드는 방법 ㄷㄷ http://naver.me/G8mOq0Av"}}',method:"POST"});
 fetch("https://entry2-dev.playentry.org/graphql", {
   headers: {
-    accept: "*/*",
-    "accept-language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,und;q=0.6",
-    "cache-control": "no-cache",
-    "content-type": "application/json",
-    pragma: "no-cache",
-    "sec-ch-ua":
-      '".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"',
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": '"macOS"',
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "x-client-type": "Client"
+    "content-type": "application/json"
   },
-  referrer:
-    "https://entry2-dev.playentry.org/community/qna/62de5fe2748b27003767ae01",
-  referrerPolicy: "strict-origin-when-cross-origin",
+  //   referrer:
+  //     "https://entry2-dev.playentry.org/community/qna/62de5fe2748b27003767ae01",
+  //   referrerPolicy: "strict-origin-when-cross-origin",
   body: '{"query":"\\n    mutation CREATE_COMMENT(\\n        \\n    $content: String\\n    $image: String\\n    $sticker: String\\n    $target: String\\n    $targetSubject: String\\n    $targetType: String\\n    $groupId: ID\\n\\n    ) {\\n        createComment(\\n            \\n    content: $content\\n    image: $image\\n    sticker: $sticker\\n    target: $target\\n    targetSubject: $targetSubject\\n    targetType: $targetType\\n    groupId: $groupId\\n\\n        ) {\\n            warning\\n            comment {\\n                \\n    id\\n    user {\\n        \\n    id\\n    nickname\\n    username\\n    profileImage {\\n        \\n    id\\n    name\\n    label {\\n        \\n    ko\\n    en\\n    ja\\n    vn\\n\\n    }\\n    filename\\n    imageType\\n    dimension {\\n        \\n    width\\n    height\\n\\n    }\\n    trimmed {\\n        filename\\n        width\\n        height\\n    }\\n\\n    }\\n    status {\\n        following\\n        follower\\n    }\\n    description\\n    role\\n\\n    }\\n    content\\n    created\\n    removed\\n    blamed\\n    commentsLength\\n    likesLength\\n    isLike\\n    hide\\n    image {\\n        \\n    id\\n    name\\n    label {\\n        \\n    ko\\n    en\\n    ja\\n    vn\\n\\n    }\\n    filename\\n    imageType\\n    dimension {\\n        \\n    width\\n    height\\n\\n    }\\n    trimmed {\\n        filename\\n        width\\n        height\\n    }\\n\\n    }\\n    sticker {\\n        \\n    id\\n    name\\n    label {\\n        \\n    ko\\n    en\\n    ja\\n    vn\\n\\n    }\\n    filename\\n    imageType\\n    dimension {\\n        \\n    width\\n    height\\n\\n    }\\n    trimmed {\\n        filename\\n        width\\n        height\\n    }\\n\\n    }\\n\\n            }\\n        }\\n    }\\n","variables":{"content":"test","target":"62de5fe2748b27003767ae01","targetSubject":"discuss","targetType":"individual"}}',
-  method: "POST",
-  mode: "cors",
-  credentials: "include"
+  method: "POST"
+  //   mode: "cors",
+  //   credentials: "include"
 });
